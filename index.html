@@ -34,6 +34,32 @@
   </head>
 
   <body>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bgMainColor">
+          <h5 class="modal-title" id="exampleModalLabel">Painter</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="controls col-12">
+            <div class="row">
+              <div class="colorContainer col-4"><div class="color first"></div></div>
+              <div class="colorContainer col-4"><div class="color second"></div></div>
+              <div class="colorContainer col-4"><div class="color third"></div></div>
+              <div class="colorContainer col-4"><div class="color fourth"></div></div>
+              <div class="colorContainer col-4"><div class="color fifth"></div></div>
+              <div class="colorContainer col-4"><div class="color sixth"></div></div>
+            </div>
+          </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-mainColor btnClose" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
     <div class="iconContainer">
       <div class="menuIcon bgMainColor"></div>
     </div>
@@ -48,23 +74,10 @@
             <a class="hobbMenu my-1" href="#Hobbies"><button type="button" class="btn btn-mainColor">Hobbies</button></a>
         </div>
         <div class="paint col-12 my-3">
-          <a  data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            <i class="fas fill fa-fill-drip"></i>
-          </a>
-        </div>
-        <div class="collapse col-10 m-auto" id="collapseExample">
-          <div class="card card-body">
-            <div class="controls col-12">
-              <div class="row">
-                <div class="colorContainer col-4"><div class="color first"></div></div>
-                <div class="colorContainer col-4"><div class="color second"></div></div>
-                <div class="colorContainer col-4"><div class="color third"></div></div>
-                <div class="colorContainer col-4"><div class="color fourth"></div></div>
-                <div class="colorContainer col-4"><div class="color fifth"></div></div>
-                <div class="colorContainer col-4"><div class="color sixth"></div></div>
-              </div>
+            <div  data-toggle="modal" data-target="#exampleModal">
+                <i class="fas fill fa-fill-drip"></i>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </div>
@@ -276,11 +289,36 @@
     <script>
       $(document).ready(function() {
         $('#fullpage').fullpage({
-
+        css3: true,
+        scrollingSpeed: 700,
+        autoScrolling: true,
+        fitToSection: false,
+        fitToSectionDelay: 1000,
+        scrollBar: false,
+        easing: 'easeInOutCubic',
+        easingcss3: 'ease',
+        loopBottom: true,
+        loopTop: false,
+        loopHorizontal: false,
+        continuousVertical: false,
+        continuousHorizontal: false,
+        scrollHorizontally: false,
+        interlockedSlides: false,
+        dragAndMove: false,
+        offsetSections: false,
+        resetSliders: false,
+        fadingEffect: false,
+        // normalScrollElements: '#AboutMe, #Education',
+        scrollOverflow: false,
+        scrollOverflowReset: false,
+        scrollOverflowOptions: null,
+        touchSensitivity: 15,
+        normalScrollElementTouchThreshold: 5,
+        bigSectionsDestination: null,
       });
 
       //methods
-      $.fn.fullpage.setAllowScrolling(false);
+      $.fn.fullpage.setAllowScrolling(true);
       });
     </script>
   </body>
